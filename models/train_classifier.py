@@ -75,11 +75,9 @@ def tokenize(text):
 def build_model():
     """
     This function builds the model and returns the same
-    
     parameters
     -----------
     none
-    
     return value
     -----------
     returns the model created
@@ -105,8 +103,19 @@ def build_model():
 
 
 def evaluate_model(model, x_test, y_test, category_names):
+    """
+    This function evaluates the models and prints the classification report
+    parameters
+    ----------------
+    model - model to be evaluated
+    x_test,y_test - test data to be predicted for
+    category_names - catagories
+    
+    return value
+    --------------------
+    none
+    """
     y_pred = model.predict(x_test)
-
     print("evaluating the model")
     for counter in range(len(category_names)):
         print("Label:", category_names[counter])
@@ -114,6 +123,17 @@ def evaluate_model(model, x_test, y_test, category_names):
 
 
 def save_model(model, model_filepath):
+    """
+    This function saves the model to pkl file
+    parameters
+    ----------------
+    model - model to be saved
+    model_filepath - name of pkl file
+    
+    return value
+    --------------------
+    none
+    """
     with open(model_filepath, 'wb') as outfile:
        pickle.dump(model, outfile)
 
@@ -136,7 +156,7 @@ def main():
         evaluate_model(model, X_test, Y_test, category_names)
 
         print('Saving model...\n    MODEL: {}'.format(model_filepath))
-        #save_model(model, model_filepath)
+        save_model(model, model_filepath)
 
         print('Trained model saved!')
 
