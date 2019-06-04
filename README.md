@@ -7,9 +7,8 @@ Disaster Response Pipelines
 
 1. Installation
 2. Project summary
-3. File Descriptions
-4. Results
-5. Licensing, Authors, and Acknowledgements
+3. Dataset
+4. File Descriptions
 
 #Installation
 
@@ -25,13 +24,12 @@ The disaster_messages.csv and disaster_categories.csv contains the disaster mess
 
 
 # File Descriptions
- - app
- - template
-- master.html - main page of web app
-- go.html - classification result page of web app
-- run.py - Flask file that runs app
+ - app -- template
+       - master.html - main page of web app
+       - go.html - classification result page of web app
+- app -- run.py - Flask file that runs app
 
-- data
+- data 
 - disaster_categories.csv – file containing the categories  
 - disaster_messages.csv – file containing disaster messages to be 
    categorized
