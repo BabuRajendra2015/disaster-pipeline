@@ -71,8 +71,10 @@ def save_data(df, database_filename):
     none
     """
     db_name='sqlite:///'+database_filename
-    print(db_name)
-    os.remove(database_filename)
+    try:
+        os.remove(database_filename)
+    except:
+        print('no db file exists')
     engine = db.create_engine(db_name)
     df.to_sql('DisasterData', engine, index=False)
     pass  
